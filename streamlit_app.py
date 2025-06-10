@@ -75,7 +75,7 @@ if st.button("Jalankan Kruskal"):
     # Tampilkan tabel pengurutan bobot
     st.subheader("Tabel Pengurutan Bobot Edge")
     df_edges = pd.DataFrame(sorted_edges, columns=["Node Awal", "Node Akhir", "Bobot"])
-    st.dataframe(df_edges)
+    st.table(df_edges)
 
 
     st.subheader("Langkah-langkah Pemilihan Edge")
