@@ -1,6 +1,7 @@
 import streamlit as st
 import networkx as nx
 import matplotlib.pyplot as plt
+import pandas as pd
 
 st.title("Visualisasi Algoritma Kruskal")
 
@@ -67,7 +68,15 @@ def kruskal_mst(edges):
     return mst, steps
 
 if st.button("Jalankan Kruskal"):
+    # Jalankan Kruskal dan ambil hasilnya
+    sorted_edges = sorted(edges, key=lambda x: x[2])
     mst_result, step_list = kruskal_mst(edges)
+
+    # Tampilkan tabel pengurutan bobot
+    st.subheader("Tabel Pengurutan Bobot Edge")
+    df_edges = pd.DataFrame(sorted_edges, columns=["Node Awal", "Node Akhir", "Bobot"])
+    st.dataframe(df_edges)
+
 
     st.subheader("Langkah-langkah Pemilihan Edge")
     for i, step in enumerate(step_list):
