@@ -43,7 +43,7 @@ nx.draw_networkx_edge_labels(G, pos, edge_labels=edge_labels, ax=ax)  # Tampilka
 st.pyplot(fig)
 
 # -------------------------------
-# Algoritma Kruskal manual (tanpa library eksternal untuk logika)
+# Algoritma Kruskal  
 # -------------------------------
 def kruskal_manual(edges):
     # Urutkan sisi berdasarkan bobot secara ascending
